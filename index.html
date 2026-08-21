@@ -1,0 +1,2732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#020805">
+<title>Happy Birthday Thraveen 💚</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:#020805;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+
+:root{
+  --green:#20f59a;
+  --green2:#08a968;
+  --green3:#8affc8;
+  --dark:#020805;
+  --card:rgba(5,20,13,.82);
+  --line:rgba(32,245,154,.25);
+}
+
+#bg{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 50% 20%,rgba(32,245,154,.11),transparent 32%),
+    radial-gradient(circle at 20% 80%,rgba(8,169,104,.08),transparent 35%),
+    #020805;
+}
+
+.star{
+  position:fixed;
+  width:2px;
+  height:2px;
+  border-radius:50%;
+  background:#8affc8;
+  box-shadow:0 0 8px #20f59a;
+  opacity:.35;
+  animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:.1}
+  to{opacity:.8;transform:scale(1.5)}
+}
+
+.floating{
+  position:fixed;
+  bottom:-30px;
+  z-index:20;
+  pointer-events:none;
+  color:#20f59a;
+  filter:drop-shadow(0 0 8px #20f59a);
+  animation:floatUp 8s linear forwards;
+}
+
+@keyframes floatUp{
+  to{
+    transform:translateY(-110vh) rotate(25deg);
+    opacity:0;
+  }
+}
+
+/* LOGIN */
+
+#access{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:
+    radial-gradient(circle,rgba(32,245,154,.12),transparent 38%),
+    #020805;
+}
+
+.access-card{
+  width:min(350px,100%);
+  padding:25px 18px;
+  text-align:center;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:rgba(4,15,10,.90);
+  backdrop-filter:blur(20px);
+  box-shadow:
+    0 0 35px rgba(32,245,154,.10),
+    inset 0 0 25px rgba(32,245,154,.025);
+}
+
+.lock{
+  width:62px;
+  height:62px;
+  margin:auto;
+  border:1px solid var(--green);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+  box-shadow:0 0 25px rgba(32,245,154,.22);
+}
+
+.access-card h1{
+  margin-top:15px;
+  font-size:25px;
+  color:var(--green3);
+  text-shadow:0 0 14px rgba(32,245,154,.45);
+}
+
+.sub{
+  margin:7px 0 18px;
+  color:#88a997;
+  font:11px Arial;
+}
+
+.field{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:12px;
+  margin:9px 0;
+  border:1px solid rgba(32,245,154,.18);
+  border-radius:12px;
+  background:rgba(0,10,6,.75);
+}
+
+.field input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#fff;
+  font:13px Arial;
+}
+
+.field input::placeholder{
+  color:#547262;
+}
+
+.btn{
+  border:1px solid rgba(32,245,154,.45);
+  border-radius:24px;
+  padding:11px 20px;
+  background:linear-gradient(90deg,#08a968,#20f59a);
+  color:#00150b;
+  font:bold 11px Arial;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(32,245,154,.15);
+}
+
+.btn:active{
+  transform:scale(.96);
+}
+
+.unlock{
+  width:100%;
+  margin-top:5px;
+}
+
+.error{
+  height:18px;
+  margin-top:7px;
+  color:#6cffb8;
+  font:11px Arial;
+}
+
+/* APP */
+
+#app{
+  display:none;
+  position:relative;
+  z-index:2;
+}
+
+.music{
+  position:fixed;
+  top:12px;
+  right:12px;
+  z-index:100;
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  border:1px solid var(--green);
+  background:rgba(2,12,7,.88);
+  color:var(--green);
+}
+
+/* SECTIONS */
+
+section{
+  min-height:100vh;
+  display:none;
+  position:relative;
+  padding:60px 13px 45px;
+  align-items:center;
+  justify-content:center;
+}
+
+section.active{
+  display:flex;
+  animation:pageIn .55s ease;
+}
+
+@keyframes pageIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+.content{
+  width:min(850px,100%);
+  text-align:center;
+}
+
+.kicker{
+  color:var(--green);
+  font:9px Arial;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.title{
+  font-size:clamp(34px,8vw,62px);
+  line-height:1.05;
+  text-shadow:0 0 18px rgba(32,245,154,.28);
+}
+
+.green{
+  color:var(--green);
+  font-style:italic;
+}
+
+.subtitle{
+  max-width:590px;
+  margin:12px auto;
+  color:#91a99a;
+  font:11px Arial;
+  line-height:1.8;
+}
+
+.big-heart{
+  font-size:64px;
+  margin:10px;
+  filter:drop-shadow(0 0 14px var(--green));
+  animation:heartPulse 1.7s infinite;
+}
+
+@keyframes heartPulse{
+  50%{transform:scale(1.12)}
+}
+
+.card,
+.game-card,
+.path-card{
+  width:min(650px,100%);
+  margin:20px auto;
+  padding:20px 16px;
+  border:1px solid var(--line);
+  border-radius:19px;
+  background:var(--card);
+  backdrop-filter:blur(15px);
+  box-shadow:0 0 30px rgba(32,245,154,.06);
+}
+
+/* PHOTOS */
+
+.photo-grid{
+  width:min(700px,100%);
+  margin:22px auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
+}
+
+.polaroid{
+  position:relative;
+  padding:6px 6px 27px;
+  background:#e9f5ee;
+  box-shadow:0 10px 25px #000;
+  transform:rotate(-1.5deg);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.polaroid:nth-child(2){transform:rotate(1.5deg)}
+.polaroid:nth-child(3){transform:rotate(1deg)}
+.polaroid:nth-child(4){transform:rotate(-1deg)}
+
+.polaroid:active{
+  transform:scale(.97);
+}
+
+.polaroid img{
+  display:block;
+  width:100%;
+  aspect-ratio:1/1.05;
+  object-fit:cover;
+}
+
+.photo-heart{
+  position:absolute;
+  right:-7px;
+  top:-12px;
+  color:var(--green);
+  font-size:25px;
+  z-index:3;
+  filter:drop-shadow(0 0 8px var(--green));
+}
+
+.photo-caption{
+  position:absolute;
+  bottom:6px;
+  left:0;
+  right:0;
+  color:#163d29;
+  font-size:10px;
+  font-style:italic;
+}
+
+/* FULLSCREEN PHOTO */
+
+#photoModal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  background:rgba(0,5,3,.96);
+  backdrop-filter:blur(12px);
+}
+
+#photoModal.show{
+  display:flex;
+}
+
+#photoModal img{
+  max-width:96vw;
+  max-height:88vh;
+  object-fit:contain;
+  border-radius:12px;
+  border:1px solid var(--green);
+  box-shadow:0 0 40px rgba(32,245,154,.25);
+  animation:zoomPhoto .35s ease;
+}
+
+@keyframes zoomPhoto{
+  from{transform:scale(.75);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.closePhoto{
+  position:absolute;
+  top:15px;
+  right:18px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid var(--green);
+  background:#031009;
+  color:var(--green);
+  font-size:20px;
+}
+
+/* VIDEO */
+
+video{
+  width:100%;
+  border-radius:13px;
+  background:#000;
+}
+
+/* LETTER */
+
+.letter{
+  text-align:left;
+}
+
+.letter p{
+  color:#b9cdbf;
+  font:13px Arial;
+  line-height:1.9;
+  margin-bottom:13px;
+}
+
+.sign{
+  color:var(--green)!important;
+  font-style:italic;
+}
+
+/* WHATSAPP */
+
+.chat-phone{
+  width:min(380px,100%);
+  height:550px;
+  margin:20px auto;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#041009;
+  font-family:Arial;
+  text-align:left;
+  box-shadow:0 0 30px rgba(32,245,154,.08);
+}
+
+.wa-head{
+  height:62px;
+  padding:8px 12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#082015;
+}
+
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#20f59a;
+  color:#00150b;
+  font-weight:bold;
+}
+
+.wa-head small{
+  display:block;
+  color:#6cffb8;
+  font-size:9px;
+  margin-top:3px;
+}
+
+.chat-body{
+  height:421px;
+  overflow:auto;
+  padding:12px 9px;
+  background:#031009;
+}
+
+.date-chip{
+  width:max-content;
+  margin:auto;
+  padding:5px 10px;
+  border-radius:9px;
+  background:#092116;
+  color:#72a88c;
+  font-size:9px;
+}
+
+.typing-row{
+  display:flex;
+  margin:7px 0;
+}
+
+.typing-row.mama{
+  justify-content:flex-start;
+}
+
+.typing-row.ammu{
+  justify-content:flex-end;
+}
+
+.typing{
+  padding:7px 10px;
+  border-radius:9px;
+  background:#0a2116;
+  color:#72a88c;
+  font-size:10px;
+  font-style:italic;
+}
+
+.chat-row{
+  display:flex;
+  margin:7px 0;
+}
+
+.chat-row.mama{
+  justify-content:flex-start;
+}
+
+.chat-row.ammu{
+  justify-content:flex-end;
+}
+
+.bubble{
+  max-width:80%;
+  padding:7px 9px 4px;
+  border-radius:8px;
+  font-size:11px;
+  line-height:1.45;
+}
+
+.mama .bubble{
+  background:#0a2116;
+  border-top-left-radius:2px;
+}
+
+.ammu .bubble{
+  background:#08754a;
+  border-top-right-radius:2px;
+}
+
+.time{
+  display:block;
+  text-align:right;
+  color:#8db3a0;
+  font-size:7px;
+  margin-top:2px;
+}
+
+/* STORY */
+
+.story-box{
+  width:min(650px,100%);
+  min-height:390px;
+  margin:20px auto;
+  position:relative;
+}
+
+.story-slide{
+  position:absolute;
+  inset:0;
+  padding:25px 17px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:rgba(4,16,10,.94);
+  box-shadow:0 0 30px rgba(32,245,154,.06);
+  opacity:0;
+  transform:translateX(30px);
+  pointer-events:none;
+  transition:.5s;
+}
+
+.story-slide.active{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+
+.story-number{
+  color:var(--green);
+  font:9px Arial;
+  letter-spacing:2px;
+}
+
+.story-icon{
+  font-size:45px;
+  margin:12px;
+}
+
+.story-slide h3{
+  font-size:25px;
+  color:var(--green3);
+  margin-bottom:10px;
+}
+
+.story-slide p{
+  max-width:560px;
+  color:#abc0b1;
+  font:12px Arial;
+  line-height:1.85;
+}
+
+.story-controls{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+
+.story-controls button{
+  padding:9px 14px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:#06150c;
+  color:var(--green);
+}
+
+/* CATCH GAME */
+
+.score{
+  color:var(--green);
+  font:bold 12px Arial;
+  margin-bottom:10px;
+}
+
+.catch-area{
+  height:320px;
+  position:relative;
+  overflow:hidden;
+  border-radius:15px;
+  border:1px solid var(--line);
+  background:#010704;
+}
+
+.catch-heart{
+  position:absolute;
+  top:-45px;
+  font-size:29px;
+  cursor:pointer;
+  animation:dropHeart 3s linear forwards;
+  filter:drop-shadow(0 0 8px var(--green));
+}
+
+@keyframes dropHeart{
+  to{
+    top:350px;
+    transform:rotate(25deg);
+  }
+}
+
+.game-message{
+  min-height:20px;
+  margin:8px;
+  color:#91c8aa;
+  font:11px Arial;
+}
+
+/* PATH */
+
+.path-grid{
+  width:min(330px,88vw);
+  aspect-ratio:1;
+  margin:15px auto;
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+  gap:2px;
+  padding:4px;
+  background:#010704;
+  border-radius:10px;
+}
+
+.path-cell{
+  display:grid;
+  place-items:center;
+  border-radius:2px;
+}
+
+.path-wall{
+  background:#0b2b1b;
+}
+
+.path-open{
+  background:rgba(32,245,154,.025);
+}
+
+.path-goal{
+  background:rgba(32,245,154,.14);
+  box-shadow:0 0 10px rgba(32,245,154,.35);
+}
+
+.path-player{
+  font-size:17px;
+  filter:drop-shadow(0 0 7px var(--green));
+  animation:heartPulse .9s infinite;
+}
+
+.path-controls{
+  width:175px;
+  margin:10px auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+}
+
+.path-controls button{
+  height:40px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#06150c;
+  color:var(--green);
+  font-size:16px;
+}
+
+.path-controls .empty{
+  visibility:hidden;
+}
+
+.path-status{
+  min-height:20px;
+  color:#91c8aa;
+  font:10px Arial;
+}
+
+/* MEMORY */
+
+.memory-grid{
+  width:min(390px,100%);
+  margin:17px auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+}
+
+.memory-card{
+  aspect-ratio:1;
+  border:0;
+  background:transparent;
+  perspective:700px;
+}
+
+.memory-inner{
+  position:relative;
+  width:100%;
+  height:100%;
+  transform-style:preserve-3d;
+  transition:.45s;
+}
+
+.memory-card.flipped .memory-inner,
+.memory-card.matched .memory-inner{
+  transform:rotateY(180deg);
+}
+
+.memory-face{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  backface-visibility:hidden;
+  border:1px solid var(--line);
+}
+
+.memory-front{
+  background:#06150c;
+  color:var(--green);
+  font-size:21px;
+}
+
+.memory-back{
+  background:#0a5b3a;
+  transform:rotateY(180deg);
+  font-size:25px;
+}
+
+.memory-card.matched .memory-back{
+  border-color:var(--green);
+  box-shadow:0 0 15px rgba(32,245,154,.3);
+}
+
+/* WORD */
+
+.word-slots{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin:18px 0;
+}
+
+.word-slot{
+  width:45px;
+  height:50px;
+  border:1px dashed rgba(32,245,154,.45);
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:#031009;
+  color:#fff;
+  font:bold 20px Arial;
+}
+
+.letter-bank{
+  display:flex;
+  justify-content:center;
+  gap:7px;
+}
+
+.letter-btn{
+  width:43px;
+  height:43px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#06150c;
+  color:var(--green);
+  font:bold 17px Arial;
+}
+
+.letter-btn.used{
+  opacity:.2;
+}
+
+/* JIGSAW */
+
+.puzzle-wrap{
+  width:min(360px,88vw);
+  margin:20px auto;
+}
+
+.puzzle{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3px;
+  padding:3px;
+  background:#010704;
+  border:1px solid var(--green);
+  border-radius:8px;
+}
+
+.tile{
+  aspect-ratio:1;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,.05);
+  transition:.2s;
+}
+
+.tile.selected{
+  outline:3px solid var(--green);
+  box-shadow:0 0 18px var(--green);
+  transform:scale(.96);
+}
+
+.puzzle-status{
+  min-height:20px;
+  color:#91c8aa;
+  font:11px Arial;
+  margin:8px;
+}
+
+/* FINAL */
+
+.cake{
+  font-size:85px;
+  margin:20px auto 10px;
+  filter:drop-shadow(0 0 20px var(--green));
+}
+
+.final-message{
+  width:min(650px,100%);
+  margin:20px auto;
+  padding:22px 17px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:rgba(4,16,10,.94);
+  color:#b9cdbf;
+  font:12px Arial;
+  line-height:1.95;
+}
+
+@media(max-width:600px){
+
+  section{
+    padding:55px 10px 35px;
+  }
+
+  .photo-grid{
+    gap:9px;
+  }
+
+  .story-box{
+    min-height:475px;
+  }
+
+  .story-slide p{
+    font-size:11px;
+  }
+
+  .chat-phone{
+    height:520px;
+  }
+
+  .chat-body{
+    height:391px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="bg"></div>
+
+<!-- LOGIN -->
+
+<div id="access">
+
+  <div class="access-card">
+
+    <div class="lock">🔐</div>
+
+    <h1>Unlock Our Love Story</h1>
+
+    <div class="sub">
+      Only for Mama × Ammu 💚
+    </div>
+
+    <div class="field">
+      👤
+      <input id="username"
+      placeholder="Username — Thraveen"
+      autocomplete="off">
+    </div>
+
+    <div class="field">
+      🔑
+      <input id="password"
+      type="password"
+      placeholder="Password">
+    </div>
+
+    <button class="btn unlock" onclick="unlock()">
+      Unlock Our Story 💚
+    </button>
+
+    <div class="error" id="error"></div>
+
+  </div>
+
+</div>
+
+
+<div id="app">
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">♫</button>
+
+
+<!-- PAGE 1 -->
+
+<section id="p1" class="active">
+
+<div class="content">
+
+<div class="kicker">A Secret Made For You</div>
+
+<div class="big-heart">💚</div>
+
+<h1 class="title">
+  Happy Birthday<br>
+  <span class="green">Thraveen</span>
+</h1>
+
+<p class="subtitle">
+  This little world contains our memories,
+  our conversations, our love and everything
+  I want to keep close to my heart.
+</p>
+
+<button class="btn" onclick="nextPage()">
+  Enter Our Love Story 💚
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 PHOTOS -->
+
+<section id="p2">
+
+<div class="content">
+
+<div class="kicker">Our Memories</div>
+
+<h2 class="title">
+  Our Little<br>
+  <span class="green">Memories</span>
+</h2>
+
+<div class="photo-grid">
+
+<div class="polaroid"
+onclick="openPhoto('images/photo1.jpg')">
+<span class="photo-heart">♥</span>
+<img src="images/photo1.jpg">
+<div class="photo-caption">Our Smile</div>
+</div>
+
+<div class="polaroid"
+onclick="openPhoto('images/photo2.jpg')">
+<span class="photo-heart">♥</span>
+<img src="images/photo2.jpg">
+<div class="photo-caption">Our Moment</div>
+</div>
+
+<div class="polaroid"
+onclick="openPhoto('images/photo3.jpg')">
+<span class="photo-heart">♥</span>
+<img src="images/photo3.jpg">
+<div class="photo-caption">Together</div>
+</div>
+
+<div class="polaroid"
+onclick="openPhoto('images/photo4.jpg')">
+<span class="photo-heart">♥</span>
+<img src="images/photo4.jpg">
+<div class="photo-caption">My Happy Place</div>
+</div>
+
+</div>
+
+<p class="subtitle">
+  Tap any photo to see it full screen ✨
+</p>
+
+<button class="btn" onclick="nextPage()">
+  Continue 💚
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO MODAL -->
+
+<div id="photoModal" onclick="closePhoto()">
+
+<button class="closePhoto"
+onclick="event.stopPropagation();closePhoto()">×</button>
+
+<img id="fullPhoto" src="" onclick="event.stopPropagation()">
+
+</div>
+
+
+<!-- PAGE 3 VIDEO -->
+
+<section id="p3">
+
+<div class="content">
+
+<div class="kicker">Our Little Movie</div>
+
+<h2 class="title">
+  Our Memory<br>
+  <span class="green">Movie</span> 🎬
+</h2>
+
+<div class="card">
+
+<video controls playsinline poster="images/photo4.jpg">
+
+<source src="video/love-video.mp4"
+type="video/mp4">
+
+</video>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+  Read My Letter 💌
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 4 LETTER -->
+
+<section id="p4">
+
+<div class="content">
+
+<div class="kicker">From Kamali</div>
+
+<h2 class="title">
+  A Letter To<br>
+  <span class="green">My Mama</span>
+</h2>
+
+<div class="card letter">
+
+<p>
+My dearest Mama,
+</p>
+
+<p>
+Sometimes I think about how a normal day can
+quietly become the beginning of something
+that changes our whole life. I never knew that
+one small meeting, one conversation and one
+simple “Hi” would slowly become such a
+beautiful part of my heart.
+</p>
+
+<p>
+Unkooda pesura every small conversation-um
+enakku romba precious. Sometimes we talk about
+something serious, sometimes we laugh for no
+reason, sometimes we fight, and sometimes
+oru word kooda pesaama irundhaalum,
+your presence itself gives me comfort.
+</p>
+
+<p>
+Naan perfect person illa mama. Enakku neraya
+mistakes irukkum, mood changes irukkum,
+sometimes unnecessary-aa kovam varum.
+Aana one thing mattum true —
+I genuinely care about you and I genuinely
+want you in my future.
+</p>
+
+<p>
+Un smile paatha enakku automatically happiness
+varum. Un voice ketta konjam peaceful-aa feel
+pannuven. Un message varumbodhu even a normal
+day becomes a little more special.
+</p>
+
+<p>
+Namma relationship perfect-aa irukkanum nu
+naan expect pannala. Instead, whatever comes,
+good days or difficult days, we should learn,
+understand and choose each other again and again.
+Adhu dhaan enakku real love.
+</p>
+
+<p>
+One day when we look back at all these small
+memories, I want us to smile and say,
+“Idhellam namma life oda beautiful beginning.”
+</p>
+
+<p>
+Mama, thank you for becoming someone I can
+trust, someone I can talk to, someone I can
+miss and someone I can love with my whole heart.
+</p>
+
+<p>
+Enakku future pathi neraya dreams irukku.
+And those dreams-la nee irukkanum.
+Life enga kondu ponaalum,
+my heart always wants to find its way back to you.
+</p>
+
+<p>
+I don't need a perfect love story.
+I just want our real story —
+with laughter, silly fights, hugs, memories,
+understanding and a lifetime of choosing each other.
+</p>
+
+<p class="sign">
+With all my heart,<br>
+Kamali 💚
+</p>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+  Open Our Chat 💬
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 5 CHAT -->
+
+<section id="p5">
+
+<div class="content">
+
+<div class="kicker">Mama × Ammu</div>
+
+<h2 class="title">
+  Our <span class="green">Chat</span> 💬
+</h2>
+
+<div class="chat-phone">
+
+<div class="wa-head">
+
+<div class="avatar">M</div>
+
+<div>
+<strong>Mama 💚</strong>
+<small id="online">online</small>
+</div>
+
+</div>
+
+<div class="chat-body" id="chatBody">
+
+<div class="date-chip">Today</div>
+
+</div>
+
+<div style="
+height:57px;
+display:flex;
+align-items:center;
+gap:8px;
+padding:7px;
+background:#06150c">
+
+<span>😊</span>
+
+<div style="
+flex:1;
+height:37px;
+border-radius:20px;
+background:#0a2116;
+display:flex;
+align-items:center;
+padding:0 13px;
+color:#557866;
+font-size:10px">
+
+Type a message
+
+</div>
+
+<span>🎤</span>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="startChat()">
+Start Our Chat 💬
+</button>
+
+<br><br>
+
+<button class="btn" onclick="nextPage()">
+Our 15 Chapters ♾️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 6 STORY -->
+
+<section id="p6">
+
+<div class="content">
+
+<div class="kicker">Our Real Story</div>
+
+<h2 class="title">
+15 Little<br>
+<span class="green">Chapters</span>
+</h2>
+
+<div class="story-box" id="storyBox"></div>
+
+<div class="story-controls">
+
+<button onclick="prevStory()">←</button>
+<button onclick="nextStory()">→</button>
+
+</div>
+
+<br>
+
+<button class="btn" onclick="nextPage()">
+Catch Our Hearts 💚
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 7 CATCH -->
+
+<section id="p7">
+
+<div class="content">
+
+<div class="kicker">Mini Game</div>
+
+<h2 class="title">
+Catch Our<br>
+<span class="green">Hearts</span> 💚
+</h2>
+
+<div class="game-card">
+
+<div class="score">
+Hearts:
+<span id="score">0</span> / 10
+</div>
+
+<div class="catch-area" id="catchArea"></div>
+
+<div class="game-message" id="gameMessage">
+Ready mama? 💚
+</div>
+
+<button class="btn" onclick="startCatch()">
+Start Game
+</button>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+Find The Path 🧭
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 8 PATH -->
+
+<section id="p8">
+
+<div class="content">
+
+<div class="kicker">Love Game</div>
+
+<h2 class="title">
+Find The<br>
+<span class="green">Path</span> 🧭
+</h2>
+
+<div class="path-card">
+
+<div class="score">
+Moves:
+<span id="pathMoves">0</span>
+</div>
+
+<div class="path-grid" id="pathGrid"></div>
+
+<div class="path-status" id="pathStatus">
+Reach the green heart 💚
+</div>
+
+<div class="path-controls">
+
+<button class="empty">•</button>
+<button onclick="movePlayer(-1,0)">↑</button>
+<button class="empty">•</button>
+
+<button onclick="movePlayer(0,-1)">←</button>
+<button onclick="resetPath()">↻</button>
+<button onclick="movePlayer(0,1)">→</button>
+
+<button class="empty">•</button>
+<button onclick="movePlayer(1,0)">↓</button>
+<button class="empty">•</button>
+
+</div>
+
+<button class="btn" onclick="resetPath()">
+Restart
+</button>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+Memory Match 💞
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 9 MEMORY -->
+
+<section id="p9">
+
+<div class="content">
+
+<div class="kicker">Memory Game</div>
+
+<h2 class="title">
+Find Our<br>
+<span class="green">Pairs</span>
+</h2>
+
+<div class="game-card">
+
+<div class="score">
+Pairs:
+<span id="pairsFound">0</span>/6
+&nbsp; • &nbsp;
+Moves:
+<span id="memoryMoves">0</span>
+</div>
+
+<div class="memory-grid" id="memoryGrid"></div>
+
+<div class="game-message" id="memoryStatus">
+Find the first pair 💚
+</div>
+
+<button class="btn" onclick="initMemory()">
+Shuffle
+</button>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+Secret Word 🔐
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 10 WORD -->
+
+<section id="p10">
+
+<div class="content">
+
+<div class="kicker">Our Secret</div>
+
+<h2 class="title">
+Secret Code<br>
+<span class="green">TKAMMU</span> 🔐
+</h2>
+
+<p class="subtitle">
+Spell our little secret word.
+</p>
+
+<div class="game-card">
+
+<div class="word-slots" id="wordSlots"></div>
+
+<div class="letter-bank" id="letterBank"></div>
+
+<div class="game-message" id="wordStatus">
+Hint: TKAMMU 💚
+</div>
+
+<button class="btn" onclick="initWord()">
+Reset
+</button>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+Piece Us Together 🧩
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 11 JIGSAW -->
+
+<section id="p11">
+
+<div class="content">
+
+<div class="kicker">Real Memory Puzzle</div>
+
+<h2 class="title">
+Piece Us<br>
+<span class="green">Together</span> 🧩
+</h2>
+
+<p class="subtitle">
+Tap any two pieces to swap them.
+Complete the whole photo.
+</p>
+
+<div class="puzzle-wrap">
+
+<div class="puzzle" id="puzzle"></div>
+
+</div>
+
+<div class="puzzle-status" id="puzzleStatus">
+Tap two pieces to swap.
+</div>
+
+<button class="btn" onclick="shufflePuzzle()">
+Shuffle Again
+</button>
+
+<br><br>
+
+<button class="btn" onclick="nextPage()">
+Final Wish 🎂
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 12 FINAL -->
+
+<section id="p12">
+
+<div class="content">
+
+<div class="kicker">Only One Last Wish</div>
+
+<h1 class="title">
+Happy Birthday<br>
+<span class="green">Thraveen</span> 🎂
+</h1>
+
+<div class="cake">🎂</div>
+
+<div class="final-message">
+
+<b style="color:#20f59a;font-size:17px">
+Happy Birthday My Mamaaa 💚
+</b>
+
+<br><br>
+
+Innaiku un birthday mama...
+but enakku idhu just oru birthday illa.
+Indha world-ku nee vandha special day.
+And somehow, life-la oru point-la,
+nee en life-ku vandha person aayita.
+Adhu dhaan enakku biggest blessing.
+
+<br><br>
+
+Namma story epdi start aachunu yosicha,
+oru small meeting,
+oru simple conversation,
+oru “Hi”,
+and then slowly so many memories.
+I never expected that those little moments
+would become something this important to me.
+
+<br><br>
+
+Enakku un kooda irukkura small moments
+romba precious.
+Un call,
+un message,
+un smile,
+un voice,
+even namma silly fights kooda
+later memories aagidum.
+
+<br><br>
+
+Mama, un life-la nee aasapadura
+ellame unakku kedaikkanum.
+Un dreams successful aaganum.
+Unakku happiness, peace, good health,
+success and lots of beautiful moments
+always irukkanum.
+
+<br><br>
+
+Namma future-la innum neraya birthdays,
+neraya trips,
+neraya laughs,
+neraya photos,
+neraya hugs,
+and countless memories create pannanum.
+
+<br><br>
+
+Naan perfect-aa promise panna mudiyadhu.
+But one thing I can say honestly —
+I will always care about you,
+always value what we have,
+and always keep our memories
+close to my heart.
+
+<br><br>
+
+Nee enakku lover mattum illa mama.
+Nee en comfort,
+en safe place,
+en favourite person,
+en best friend.
+
+<br><br>
+
+Life full-ah un kooda travel pannanum.
+Good days-laum,
+difficult days-laum,
+happy moments-laum,
+silent moments-laum —
+I want us to keep choosing each other.
+
+<br><br>
+
+<b style="color:#8affc8">
+Happy Birthday once again,
+Thraveen. 🎂💚
+</b>
+
+<br><br>
+
+May this new year of your life
+bring you everything your heart deserves.
+
+<br><br>
+
+<b style="color:#20f59a">
+Forever yours,<br>
+Kamali 💚♾️
+</b>
+
+</div>
+
+<button class="btn" onclick="celebrate()">
+Make A Wish ✨
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+
+<audio id="music" loop>
+<source src="music/background.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* STARS */
+
+for(let i=0;i<65;i++){
+
+ const s=document.createElement("span");
+
+ s.className="star";
+
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.animationDelay=Math.random()*4+"s";
+
+ document.getElementById("bg").appendChild(s);
+
+}
+
+
+/* LOGIN */
+
+function unlock(){
+
+ const u=document
+ .getElementById("username")
+ .value.trim()
+ .toLowerCase();
+
+ const p=document
+ .getElementById("password")
+ .value.trim();
+
+ if(u==="thraveen" && p==="2208"){
+
+  document.getElementById("access").style.display="none";
+
+  document.getElementById("app").style.display="block";
+
+  document.getElementById("music")
+  .play()
+  .catch(()=>{});
+
+  floatHearts();
+
+ }else{
+
+  document.getElementById("error")
+  .textContent="Username or password wrong 💚";
+
+ }
+
+}
+
+document
+.getElementById("password")
+.addEventListener("keydown",e=>{
+ if(e.key==="Enter")unlock();
+});
+
+
+/* PAGE */
+
+let page=1;
+
+const pages=[
+ ...document.querySelectorAll("section")
+];
+
+function showPage(n){
+
+ page=Math.max(
+  1,
+  Math.min(pages.length,n)
+ );
+
+ pages.forEach((x,i)=>{
+  x.classList.toggle(
+   "active",
+   i===page-1
+  );
+ });
+
+ window.scrollTo(0,0);
+
+}
+
+function nextPage(){
+ showPage(page+1);
+}
+
+
+/* FLOATING */
+
+function floatHearts(){
+
+ if(window.floatStarted)return;
+
+ window.floatStarted=true;
+
+ setInterval(()=>{
+
+  const h=document.createElement("div");
+
+  h.className="floating";
+
+  h.textContent=["💚","♥","✦"][Math.floor(Math.random()*3)];
+
+  h.style.left=(Math.random()*94+2)+"%";
+
+  h.style.fontSize=(12+Math.random()*14)+"px";
+
+  document.body.appendChild(h);
+
+  setTimeout(()=>{
+   h.remove();
+  },8000);
+
+ },2200);
+
+}
+
+
+/* MUSIC */
+
+function toggleMusic(){
+
+ const m=document.getElementById("music");
+
+ const b=document.getElementById("musicBtn");
+
+ if(m.paused){
+
+  m.play().catch(()=>{});
+
+  b.textContent="♫";
+
+ }else{
+
+  m.pause();
+
+  b.textContent="🔇";
+
+ }
+
+}
+
+
+/* PHOTO ZOOM */
+
+function openPhoto(src){
+
+ document
+ .getElementById("fullPhoto")
+ .src=src;
+
+ document
+ .getElementById("photoModal")
+ .classList.add("show");
+
+}
+
+function closePhoto(){
+
+ document
+ .getElementById("photoModal")
+ .classList.remove("show");
+
+}
+
+
+/* CHAT */
+
+const chatMessages=[
+
+ ["mama","Mama is typing...","Ammu... 🥹💚"],
+
+ ["ammu","Ammu is typing...","Sollunga mamaa 💚"],
+
+ ["mama","Mama is typing...","Enna panra Ammu?"],
+
+ ["ammu","Ammu is typing...","Ungala pathi dhaan yosichitu iruken mama 😌💚"],
+
+ ["mama","Mama is typing...","Nijamava? 👀"],
+
+ ["ammu","Ammu is typing...","Aama mama... eppovume neenga dhaan mind-la 🥹"],
+
+ ["mama","Mama is typing...","En Ammu ipdi cute-aa pesura? 😭💚"],
+
+ ["ammu","Ammu is typing...","Because you're my favourite person mama."],
+
+ ["mama","Mama is typing...","Un kooda pesina enakku whole day happy."],
+
+ ["ammu","Ammu is typing...","Enakkum mama 🥹"],
+
+ ["mama","Mama is typing...","Namma first meet nyabagam irukka?"],
+
+ ["ammu","Ammu is typing...","Epdi marakka mudiyum mama... ❤️"],
+
+ ["mama","Mama is typing...","Andha small moment ippo ivlo periya story."],
+
+ ["ammu","Ammu is typing...","Innum neraya chapters irukku mama ♾️"],
+
+ ["mama","Mama is typing...","Forever with my Ammu 💚"],
+
+ ["ammu","Ammu is typing...","Forever with my Mamaaa 🥹💚"],
+
+ ["mama","Mama is typing...","En birthday-ku enakku vera edhuvum venam... nee irundha podhum."],
+
+ ["ammu","Ammu is typing...","Happy Birthday mamaaa 🎂💚"],
+
+ ["mama","Mama is typing...","Love you more, Ammu. Always. ♾️"]
+
+];
+
+let chatIndex=0;
+let chatStarted=false;
+
+function startChat(){
+
+ if(chatStarted)return;
+
+ chatStarted=true;
+ chatIndex=0;
+
+ const body=document.getElementById("chatBody");
+
+ body.innerHTML='<div class="date-chip">Today</div>';
+
+ chatNext();
+
+}
+
+function chatNext(){
+
+ if(chatIndex>=chatMessages.length){
+
+  document.getElementById("online")
+  .textContent="last seen just now";
+
+  return;
+ }
+
+ const [
+  from,
+  typing,
+  text
+ ]=chatMessages[chatIndex];
+
+ const body=document.getElementById("chatBody");
+
+ const typingRow=document.createElement("div");
+
+ typingRow.className=
+ "typing-row "+from;
+
+ const typingBox=document.createElement("div");
+
+ typingBox.className="typing";
+
+ typingBox.textContent=typing;
+
+ typingRow.appendChild(typingBox);
+
+ body.appendChild(typingRow);
+
+ body.scrollTop=body.scrollHeight;
+
+ setTimeout(()=>{
+
+  typingRow.remove();
+
+  const row=document.createElement("div");
+
+  row.className="chat-row "+from;
+
+  const bubble=document.createElement("div");
+
+  bubble.className="bubble";
+
+  bubble.innerHTML=
+   text+
+   '<span class="time">'+
+   new Date().toLocaleTimeString([],{
+    hour:"2-digit",
+    minute:"2-digit"
+   })+
+   (from==="ammu"?" ✓✓":"")+
+   "</span>";
+
+  row.appendChild(bubble);
+
+  body.appendChild(row);
+
+  body.scrollTop=body.scrollHeight;
+
+  chatIndex++;
+
+  setTimeout(chatNext,450);
+
+ },650);
+
+}
+
+
+/* 15 STORY */
+
+const storyData=[
+
+ ["01 / 15","🏫","First Meet",
+ "Veetukku pakkathula first time meet pannadhu. Conversation romba small-aa irundhaalum, andha moment enakku romba special. Adhu marakka mudiyadha memory. 💚"],
+
+ ["02 / 15","👀","First Feeling",
+ "Already avana Insta-la paathirukken. Enakku avan dhaan future life-nu therinjiduchu poche. Avana paatha shy aagum. Andha feeling romba special. 💚"],
+
+ ["03 / 15","💬","First Conversation",
+ "First avan enakku phone number kuduthaan. WhatsApp-la first time “Hi, naan Thraveen” nu sonnaan. Naan “Hi, naan Kamali” nu sonnen. Avan “theriyum” nu sonnaan. Anga dhaan namma story start aachu. 💚"],
+
+ ["04 / 15","❤️","Love Confession",
+ "One week after avan enkitta “nee enna love pandra thaana?” nu keta. Naan first no sonnen. Finally “aama da, naan unna love pandra” nu solliten. ❤️"],
+
+ ["05 / 15","🥹","That Moment",
+ "Romba special-aa wait panni irundhen adha solla. Andha chance kedaichapo heart full-aa irundhuchu. Andha moment eppovume special. 🥹"],
+
+ ["06 / 15","🤗","First Special Memory",
+ "First meet dhaan. Andha meet-la hug and missing kiss irundhuchu. Adhu romba special and unforgettable memory. 💚"],
+
+ ["07 / 15","💬","Falling Deeper",
+ "Neraya pesuvom, romantic talks pannuvom, jokes pannuvom. Pesina pesina avana innum pudikka aarambichiduchu. ❤️"],
+
+ ["08 / 15","💚","Favorite Memory",
+ "Engaloda first lip kiss dhaan marakkaave mudiyathu mama. Adhu en heart-la forever save pannina memory. 💚"],
+
+ ["09 / 15","🥹","Why I Stayed",
+ "Neraya sanda vandhaalum, difficult situations vandhaalum, avana vida manasu varadhu. Because he matters to me more than any temporary problem."],
+
+ ["10 / 15","😍","His Qualities",
+ "Avanoda smile, caring nature and sometimes vara anger kooda namma story oda part dhaan. Avana complete-aa love panna kathukitten. 💚"],
+
+ ["11 / 15","🔐","Our Secret",
+ "Engalukku mattum puriyura oru little secret irukku. Adhu namma relationship-ku oru small signature maari."],
+
+ ["12 / 15","🔒","TKAMMU",
+ "TKAMMU. Oru small code dhaan. Aana enakku adhu namma rendu perukkum mattum puriyura special little world. 💚"],
+
+ ["13 / 15","💍","My Biggest Wish",
+ "Avan ninaikkura vishayam ellame true aaganum. Avan happy-aa irukkanum. And one day naan avan pakkathula wife-ah stand pannanum. ❤️"],
+
+ ["14 / 15","🌍","Our Future",
+ "Future-la enakku specific-aa one thing mattum venum — whatever happens, namma rendu perum together-aa grow aaganum, travel pannanum, memories create pannanum."],
+
+ ["15 / 15","♾️","Forever",
+ "Eppo irukura maari happy-ah irukkanum. Last varaikum naan avan kooda irukkanum. Marriage-nu oru day panna, avana dhaan pannuven. En life-ah un kooda share pannanum mama. ❤️♾️<br><br>Nee en life-la vandhadhukku apram naan romba happy aana. Un call and un message enna happy-ah feel pannum. Nee lover mattum illa — en comfort, en safe place and en best friend.<br><br>Un kooda irundha dhaan enakku peaceful-aa irukkum. Adhanala dhaan naan unkitta ella vishayum solla mudiyudhu. Life full-ah un kooda travel pannanum mama. Happy Birthday and stay blessed forever. 💚♾️"]
+
+];
+
+const storyBox=document.getElementById("storyBox");
+
+storyData.forEach((x,i)=>{
+
+ const d=document.createElement("div");
+
+ d.className=
+ "story-slide"+
+ (i===0?" active":"");
+
+ d.innerHTML=
+ '<div class="story-number">'+x[0]+"</div>"+
+ '<div class="story-icon">'+x[1]+"</div>"+
+ "<h3>"+x[2]+"</h3>"+
+ "<p>"+x[3]+"</p>";
+
+ storyBox.appendChild(d);
+
+});
+
+const slides=[
+ ...document.querySelectorAll(".story-slide")
+];
+
+let storyIndex=0;
+
+function storyShow(n){
+
+ storyIndex=
+ (n+slides.length)%slides.length;
+
+ slides.forEach((s,i)=>{
+  s.classList.toggle(
+   "active",
+   i===storyIndex
+  );
+ });
+
+}
+
+function nextStory(){
+ storyShow(storyIndex+1);
+}
+
+function prevStory(){
+ storyShow(storyIndex-1);
+}
+
+
+/* CATCH */
+
+let score=0;
+let catchTimer;
+
+function startCatch(){
+
+ clearInterval(catchTimer);
+
+ score=0;
+
+ document.getElementById("score")
+ .textContent="0";
+
+ const area=document.getElementById("catchArea");
+
+ area.innerHTML="";
+
+ document.getElementById("gameMessage")
+ .textContent="Catch them mama! 💚";
+
+ catchTimer=setInterval(()=>{
+
+  if(score>=10)return;
+
+  const h=document.createElement("span");
+
+  h.className="catch-heart";
+
+  h.textContent="💚";
+
+  h.style.left=
+   (Math.random()*88+3)+"%";
+
+  area.appendChild(h);
+
+  h.onclick=()=>{
+
+   score++;
+
+   document.getElementById("score")
+   .textContent=score;
+
+   h.remove();
+
+   if(score>=10){
+
+    clearInterval(catchTimer);
+
+    document.getElementById("gameMessage")
+    .textContent=
+    "10 hearts caught! Love wins 💚✨";
+
+    celebrateSmall();
+
+   }
+
+  };
+
+  setTimeout(()=>{
+   h.remove();
+  },3500);
+
+ },600);
+
+}
+
+
+/* PATH */
+
+const maze=[
+
+ [1,1,1,1,1,1,1,1,1],
+
+ [1,0,0,0,1,0,0,0,1],
+
+ [1,0,1,0,1,0,1,0,1],
+
+ [1,0,1,0,0,0,1,0,1],
+
+ [1,0,1,1,1,0,1,0,1],
+
+ [1,0,0,0,1,0,1,0,1],
+
+ [1,1,1,0,1,0,1,0,1],
+
+ [1,0,0,0,0,0,0,0,1],
+
+ [1,1,1,1,1,1,1,1,1]
+
+];
+
+let player={
+ r:7,
+ c:1
+};
+
+const goal={
+ r:1,
+ c:7
+};
+
+let pathMoves=0;
+let pathFinished=false;
+
+function renderPath(){
+
+ const grid=document.getElementById("pathGrid");
+
+ grid.innerHTML="";
+
+ maze.forEach((row,r)=>{
+
+  row.forEach((v,c)=>{
+
+   const cell=document.createElement("div");
+
+   cell.className=
+    "path-cell "+
+    (v?"path-wall":"path-open");
+
+   if(r===goal.r && c===goal.c){
+
+    cell.classList.add("path-goal");
+
+    cell.innerHTML="<span>💚</span>";
+
+   }
+
+   if(r===player.r && c===player.c){
+
+    cell.innerHTML=
+    '<span class="path-player">💚</span>';
+
+   }
+
+   grid.appendChild(cell);
+
+  });
+
+ });
+
+ document.getElementById("pathMoves")
+ .textContent=pathMoves;
+
+}
+
+function movePlayer(dr,dc){
+
+ if(pathFinished)return;
+
+ const nr=player.r+dr;
+ const nc=player.c+dc;
+
+ if(
+  nr<0 ||
+  nc<0 ||
+  nr>=maze.length ||
+  nc>=maze[0].length ||
+  maze[nr][nc]===1
+ ){
+
+  document.getElementById("pathStatus")
+  .textContent=
+  "Wall! Try another direction 💚";
+
+  return;
+
+ }
+
+ player={
+  r:nr,
+  c:nc
+ };
+
+ pathMoves++;
+
+ renderPath();
+
+ if(
+  player.r===goal.r &&
+  player.c===goal.c
+ ){
+
+  pathFinished=true;
+
+  document.getElementById("pathStatus")
+  .textContent=
+  "You found our path! 💚✨";
+
+  celebrateSmall();
+
+ }else{
+
+  document.getElementById("pathStatus")
+  .textContent=
+  "Keep going... 💚";
+
+ }
+
+}
+
+function resetPath(){
+
+ player={
+  r:7,
+  c:1
+ };
+
+ pathMoves=0;
+ pathFinished=false;
+
+ document.getElementById("pathStatus")
+ .textContent=
+ "Reach the green heart 💚";
+
+ renderPath();
+
+}
+
+document.addEventListener("keydown",e=>{
+
+ if(page!==8)return;
+
+ if(e.key==="ArrowUp")
+  movePlayer(-1,0);
+
+ if(e.key==="ArrowDown")
+  movePlayer(1,0);
+
+ if(e.key==="ArrowLeft")
+  movePlayer(0,-1);
+
+ if(e.key==="ArrowRight")
+  movePlayer(0,1);
+
+});
+
+renderPath();
+
+
+/* MEMORY MATCH */
+
+const memoryValues=[
+ "💚","🌿","💍","🎂","♾️","🌹"
+];
+
+let memoryFirst=null;
+let memoryLock=false;
+let memoryPairs=0;
+let memoryMoves=0;
+
+function initMemory(){
+
+ const values=[
+  ...memoryValues,
+  ...memoryValues
+ ].sort(()=>Math.random()-.5);
+
+ const grid=
+ document.getElementById("memoryGrid");
+
+ grid.innerHTML="";
+
+ memoryFirst=null;
+ memoryLock=false;
+ memoryPairs=0;
+ memoryMoves=0;
+
+ document.getElementById("pairsFound")
+ .textContent="0";
+
+ document.getElementById("memoryMoves")
+ .textContent="0";
+
+ values.forEach(value=>{
+
+  const card=document.createElement("button");
+
+  card.className="memory-card";
+
+  card.dataset.value=value;
+
+  card.innerHTML=
+  '<div class="memory-inner">'+
+  '<div class="memory-face memory-front">♥</div>'+
+  '<div class="memory-face memory-back">'+value+"</div>"+
+  "</div>";
+
+  card.onclick=()=>flipMemory(card);
+
+  grid.appendChild(card);
+
+ });
+
+}
+
+function flipMemory(card){
+
+ if(
+  memoryLock ||
+  card.classList.contains("flipped") ||
+  card.classList.contains("matched")
+ )return;
+
+ card.classList.add("flipped");
+
+ if(!memoryFirst){
+
+  memoryFirst=card;
+
+  return;
+
+ }
+
+ memoryMoves++;
+
+ document.getElementById("memoryMoves")
+ .textContent=memoryMoves;
+
+ const second=card;
+
+ if(
+  memoryFirst.dataset.value===
+  second.dataset.value
+ ){
+
+  memoryFirst.classList.add("matched");
+
+  second.classList.add("matched");
+
+  memoryPairs++;
+
+  document.getElementById("pairsFound")
+  .textContent=memoryPairs;
+
+  memoryFirst=null;
+
+  if(memoryPairs===6){
+
+   document.getElementById("memoryStatus")
+   .textContent=
+   "All pairs found! 💚✨";
+
+   celebrateSmall();
+
+  }
+
+ }else{
+
+  memoryLock=true;
+
+  const first=memoryFirst;
+
+  setTimeout(()=>{
+
+   first.classList.remove("flipped");
+
+   second.classList.remove("flipped");
+
+   memoryFirst=null;
+
+   memoryLock=false;
+
+  },650);
+
+ }
+
+}
+
+initMemory();
+
+
+/* WORD TKAMMU */
+
+const secretWord="TKAMMU";
+
+let wordAnswer=[];
+
+function initWord(){
+
+ wordAnswer=[];
+
+ const letters=
+ [...secretWord]
+ .sort(()=>Math.random()-.5);
+
+ const slots=
+ document.getElementById("wordSlots");
+
+ const bank=
+ document.getElementById("letterBank");
+
+ slots.innerHTML="";
+ bank.innerHTML="";
+
+ for(let i=0;i<secretWord.length;i++){
+
+  const s=document.createElement("div");
+
+  s.className="word-slot";
+
+  slots.appendChild(s);
+
+ }
+
+ letters.forEach(letter=>{
+
+  const b=document.createElement("button");
+
+  b.className="letter-btn";
+
+  b.textContent=letter;
+
+  b.onclick=()=>{
+
+   if(b.classList.contains("used"))
+    return;
+
+   if(wordAnswer.length>=secretWord.length)
+    return;
+
+   b.classList.add("used");
+
+   wordAnswer.push(letter);
+
+   slots.children[
+    wordAnswer.length-1
+   ].textContent=letter;
+
+   if(wordAnswer.length===secretWord.length){
+
+    if(
+     wordAnswer.join("")===
+     secretWord
+    ){
+
+     document.getElementById("wordStatus")
+     .textContent=
+     "TKAMMU unlocked! 💚🔐";
+
+     celebrateSmall();
+
+    }else{
+
+     document.getElementById("wordStatus")
+     .textContent=
+     "Wrong order. Reset and try again 💚";
+
+    }
+
+   }
+
+  };
+
+  bank.appendChild(b);
+
+ });
+
+ document.getElementById("wordStatus")
+ .textContent=
+ "Hint: TKAMMU 💚";
+
+}
+
+initWord();
+
+
+/* REAL JIGSAW */
+
+let order=[
+ 0,1,2,
+ 3,4,5,
+ 6,7,8
+];
+
+let selectedTile=null;
+
+const puzzle=
+document.getElementById("puzzle");
+
+function renderPuzzle(){
+
+ puzzle.innerHTML="";
+
+ order.forEach((piece,position)=>{
+
+  const tile=
+  document.createElement("div");
+
+  tile.className="tile";
+
+  tile.style.backgroundImage=
+  'url("images/photo1.jpg")';
+
+  tile.style.backgroundSize=
+  "300% 300%";
+
+  const originalRow=
+  Math.floor(piece/3);
+
+  const originalCol=
+  piece%3;
+
+  tile.style.backgroundPosition=
+  (originalCol*50)+"% "+
+  (originalRow*50)+"%";
+
+  tile.onclick=()=>{
+   selectPuzzleTile(tile);
+  };
+
+  puzzle.appendChild(tile);
+
+ });
+
+ const complete=
+ order.every((v,i)=>v===i);
+
+ if(complete){
+
+  document.getElementById("puzzleStatus")
+  .textContent=
+  "Puzzle complete! We fit together perfectly 💚✨";
+
+ }else{
+
+  document.getElementById("puzzleStatus")
+  .textContent=
+  "Tap two pieces to swap them.";
+
+ }
+
+}
+
+function selectPuzzleTile(tile){
+
+ const position=
+ [...puzzle.children].indexOf(tile);
+
+ if(selectedTile===null){
+
+  selectedTile=position;
+
+  tile.classList.add("selected");
+
+  return;
+
+ }
+
+ if(selectedTile===position){
+
+  selectedTile=null;
+
+  renderPuzzle();
+
+  return;
+
+ }
+
+ [
+  order[selectedTile],
+  order[position]
+ ]=[
+  order[position],
+  order[selectedTile]
+ ];
+
+ selectedTile=null;
+
+ renderPuzzle();
+
+ if(order.every((v,i)=>v===i)){
+
+  celebrateSmall();
+
+ }
+
+}
+
+function shufflePuzzle(){
+
+ do{
+
+  order=[
+   0,1,2,
+   3,4,5,
+   6,7,8
+  ].sort(()=>Math.random()-.5);
+
+ }while(
+  order.every((v,i)=>v===i)
+ );
+
+ selectedTile=null;
+
+ renderPuzzle();
+
+}
+
+shufflePuzzle();
+
+
+/* CELEBRATION */
+
+function celebrateSmall(){
+
+ for(let i=0;i<10;i++){
+
+  setTimeout(()=>{
+
+   const h=document.createElement("div");
+
+   h.className="floating";
+
+   h.textContent="💚";
+
+   h.style.left=
+   Math.random()*95+"%";
+
+   h.style.fontSize=
+   "20px";
+
+   document.body.appendChild(h);
+
+   setTimeout(()=>{
+    h.remove();
+   },8000);
+
+  },i*80);
+
+ }
+
+}
+
+function celebrate(){
+
+ for(let i=0;i<30;i++){
+
+  setTimeout(()=>{
+
+   const h=document.createElement("div");
+
+   h.className="floating";
+
+   h.textContent=
+   ["💚","✨","♾️","🎂","♥"]
+   [Math.floor(Math.random()*5)];
+
+   h.style.left=
+   Math.random()*95+"%";
+
+   h.style.fontSize=
+   (16+Math.random()*16)+"px";
+
+   document.body.appendChild(h);
+
+   setTimeout(()=>{
+    h.remove();
+   },8000);
+
+  },i*70);
+
+ }
+
+ setTimeout(()=>{
+
+  alert(
+   "Happy Birthday Thraveen 💚\n"+
+   "My love for you is forever.\n"+
+   "— Kamali"
+  );
+
+ },500);
+
+}
+
+</script>
+
+</body>
+</html>
